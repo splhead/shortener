@@ -4,6 +4,6 @@ import { ShortenerURLController } from '@modules/urls/controllers/ShotenerURLCon
 
 const router = Router()
 
-router.post('/urls', new ShortenerURLController().handle)
+router.post('/', new ShortenerURLController().create)
 
 export { router }
