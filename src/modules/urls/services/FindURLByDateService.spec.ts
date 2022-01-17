@@ -23,7 +23,7 @@ describe('FindURLByDate', () => {
       originURL: 'https://www.bing.com'
     })
 
-    const date = shortenURL.createdAt || new Date()
+    const date = (shortenURL.createdAt || new Date()).toISOString()
 
     const findUrls = await service.execute({
       date

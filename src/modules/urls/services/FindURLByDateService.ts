@@ -3,7 +3,7 @@ import { injectable, inject } from 'tsyringe'
 import { UrlRepositoryProtocol } from '../repositories/UrlRepositoryProtocol'
 
 type Request = {
-  date: Date
+  date: string
 }
 
 @injectable()
@@ -14,15 +14,23 @@ class FindURLByDateService {
   ) {}
 
   public async execute({ date }: Request) {
-    const shortUrl = await this.urlRepository.findByDate(date)
+    try {
+      const convertedDate = new Date(date)
 
-    if (!shortUrl) {
+      const shortUrl = await this.urlRepository.findByDate(convertedDate)
+
+      if (!shortUrl) {
+        throw new AppError({
+          message: 'Nenhuma Url encontrada'
+        })
+      }
+
+      return shortUrl
+    } catch (error) {
       throw new AppError({
-        message: 'Nenhuma Url encontrada'
+        message: 'data inválida'
       })
     }
-
-    return shortUrl
   }
 }
 
