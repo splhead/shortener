@@ -1,9 +1,9 @@
 import { Router } from 'express'
 
-import { ShortenerURLController } from '@modules/urls/controllers/ShotenerURLController'
+import { CreateShortURLController } from '@modules/urls/controllers/CreateShortURLController'
 
 const router = Router()
 
-router.post('/', new ShortenerURLController().create)
+router.post('/', new CreateShortURLController().handle)
 
 export { router }

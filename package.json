@@ -6,7 +6,9 @@
   "author": "Silas P Ladislau",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only src/shared/infra/server.ts"
+    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only src/shared/infra/server.ts",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
@@ -19,7 +21,6 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.4.7",
-    "jest-mock-extended": "^2.0.4",
     "prettier": "^2.5.1",
     "prisma": "^3.8.0",
     "ts-jest": "^27.1.2",
@@ -30,6 +31,7 @@
   "dependencies": {
     "@prisma/client": "^3.8.0",
     "cors": "^2.8.5",
+    "date-fns": "^2.28.0",
     "dotenv": "^11.0.0",
     "express": "^4.17.2",
     "nanoid": "^3.1.32",
