@@ -6,12 +6,12 @@ import { container } from 'tsyringe'
 
 class CreateShortURLController {
   async handle(request: Request, response: Response) {
-    const { url } = request.body
+    const { address } = request.body
 
     const service = container.resolve(CreateShortURLService)
 
     try {
-      const result = await service.execute({ originURL: url })
+      const result = await service.execute({ originURL: address })
 
       return response.json(result)
     } catch (error) {

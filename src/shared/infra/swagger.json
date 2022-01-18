@@ -1,0 +1,180 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API encurtador de URLs",
+    "description": "API criada para estudos e obtenção de nota na disciplina Desenvolvimento Back-End para Aplicações Mobile na faculdade Unyleya do aluno Silas Ladislau",
+    "contact": {
+      "email": "splhead@gmail.com"
+    },
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/": {
+      "post": {
+        "summary": "Encurtar um endereço",
+        "description": "Responsável por encurtar a URL",
+        "tags": ["URL"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/URL"
+              },
+              "examples": {
+                "google": {
+                  "value": {
+                    "address": "https://www.google.com"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Endereço passado é inválido"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/shortenedURL"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Mostra lista de endereços encurtados",
+        "description": "mostra lista de objetos dos endereços encurtados por uma data específica",
+        "tags": [
+          "URL"
+        ],
+        "parameters": [
+          {
+            "name": "date",
+            "in": "query",
+            "description": "data no padrão ISO",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "URL não encontrada"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/shortenedURL"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/url/{id}": {
+      "get": {
+        "summary": "Mostra um endereço encurtado",
+        "description": "mostra objeto do endereço encurtado com base no seu ID",
+        "tags": [
+          "URL"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do endereço encurtado",
+            "required": true,
+            "type": "uuid"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "URL não encontrada"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/shortenedURL"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{hash}": {
+      "get": {
+        "summary": "Mostra um endereço encurtado",
+        "description": "mostra objeto do endereço encurtado com base no seu encurtamento",
+        "tags": [
+          "URL"
+        ],
+        "parameters": [
+          {
+            "name": "hash",
+            "in": "path",
+            "description": "hash de encurtamento",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "URL não encontrada"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/shortenedURL"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "URL": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "shortenedURL": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "hash": {
+            "type": "string"
+          },
+          "shortURL": {
+            "type": "string"
+          },
+          "originURL": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
