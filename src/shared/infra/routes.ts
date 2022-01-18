@@ -1,9 +1,9 @@
 import { Router } from 'express'
 
-import { CreateShortURLController } from 'modules/urls/controllers/CreateShortURLController'
-import { FindShortURLByDateController } from 'modules/urls/controllers/FindShortURLByDateController'
-import { FindShortURLByHashController } from 'modules/urls/controllers/FindShortURLByHashController'
-import { FindShortURLByIdController } from 'modules/urls/controllers/FindShortURLByIdController'
+import { CreateShortURLController } from '@modules/urls/controllers/CreateShortURLController'
+import { FindShortURLByDateController } from '@modules/urls/controllers/FindShortURLByDateController'
+import { FindShortURLByHashController } from '@modules/urls/controllers/FindShortURLByHashController'
+import { FindShortURLByIdController } from '@modules/urls/controllers/FindShortURLByIdController'
 
 const router = Router()
 

@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import { container } from 'tsyringe'
 
 import { FindURLByDateService } from '@modules/urls/services/FindURLByDateService'
-import { AppError } from 'shared/errors/AppError'
+import { AppError } from '@shared/errors/AppError'
 
 class FindShortURLByDateController {
   async handle(request: Request, response: Response) {

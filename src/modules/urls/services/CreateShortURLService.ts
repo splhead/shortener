@@ -2,7 +2,7 @@ import { injectable, inject } from 'tsyringe'
 import validUrl from 'valid-url'
 import { nanoid } from 'nanoid'
 
-import { AppError } from 'shared/errors/AppError'
+import { AppError } from '@shared/errors/AppError'
 import { UrlRepositoryProtocol } from '../repositories/UrlRepositoryProtocol'
 
 type Request = {

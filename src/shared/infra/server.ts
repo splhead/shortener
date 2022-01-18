@@ -3,7 +3,7 @@ import 'dotenv/config'
 import cors from 'cors'
 import express from 'express'
 
-import 'shared/di'
+import '@shared/di'
 
 import { router } from './routes'
 

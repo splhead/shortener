@@ -1,8 +1,8 @@
 import { Request, Response } from 'express'
 import { container } from 'tsyringe'
 
-import { FindURLByIdService } from 'modules/urls/services/FindURLByIdService'
-import { AppError } from 'shared/errors/AppError'
+import { FindURLByIdService } from '@modules/urls/services/FindURLByIdService'
+import { AppError } from '@shared/errors/AppError'
 
 class FindShortURLByIdController {
   async handle(request: Request, response: Response) {

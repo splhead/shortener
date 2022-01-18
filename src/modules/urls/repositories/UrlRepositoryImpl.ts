@@ -1,5 +1,5 @@
 import { endOfDay, startOfDay } from 'date-fns'
-import { prisma } from 'shared/infra/prisma/client'
+import { prisma } from '@shared/infra/prisma/client'
 import { ShortenURL, UrlRepositoryProtocol } from './UrlRepositoryProtocol'
 
 class UrlRepositoryImpl implements UrlRepositoryProtocol {

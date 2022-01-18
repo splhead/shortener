@@ -4,3 +4,4 @@ node_modules
 prisma/urls.db
 prisma/migrations/migration_lock.toml
 src/shared/di/index.ts
+dist

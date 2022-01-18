@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 
 import { CreateShortURLService } from '@modules/urls/services/CreateShortURLService'
-import { AppError } from 'shared/errors/AppError'
+import { AppError } from '@shared/errors/AppError'
 import { container } from 'tsyringe'
 
 class CreateShortURLController {

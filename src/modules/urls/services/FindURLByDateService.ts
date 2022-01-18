@@ -1,4 +1,4 @@
-import { AppError } from 'shared/errors/AppError'
+import { AppError } from '@shared/errors/AppError'
 import { injectable, inject } from 'tsyringe'
 import { UrlRepositoryProtocol } from '../repositories/UrlRepositoryProtocol'
 
