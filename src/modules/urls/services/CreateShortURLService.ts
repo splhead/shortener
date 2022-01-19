@@ -14,7 +14,7 @@ class CreateShortURLService {
   constructor(
     @inject('UrlRepository')
     private urlRepository: UrlRepositoryProtocol
-  ) {}
+  ) { }
 
   async execute({ originURL }: Request) {
     if (!validUrl.isWebUri(originURL)) {
@@ -26,10 +26,13 @@ class CreateShortURLService {
 
     const hash = nanoid(10)
 
+    // to work on localhost and on deploy
+    const port = process.env.PORT === '3000' ? `:${process.env.PORT}` : ''
+
     const url = await this.urlRepository.create({
       hash,
       originURL,
-      shortURL: `${process.env.BACKEND_URL}:${process.env.PORT}/${hash}`
+      shortURL: `${process.env.BACKEND_URL}${port}/${hash}`
     })
 
     return url
