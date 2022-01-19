@@ -29,7 +29,7 @@ class CreateShortURLService {
     const url = await this.urlRepository.create({
       hash,
       originURL,
-      shortURL: `${process.env.BACKEND_URL}:${process.env.BACKEND_PORT}/${hash}`
+      shortURL: `${process.env.BACKEND_URL}:${process.env.PORT}/${hash}`
     })
 
     return url

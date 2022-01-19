@@ -10,7 +10,7 @@ import '@shared/di'
 
 import { router } from './routes'
 
-const port = process.env.BACKEND_PORT
+const port = process.env.PORT
 
 const app = express()
 
