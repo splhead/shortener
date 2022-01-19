@@ -1,8 +1,0 @@
--- CreateTable
-CREATE TABLE "Urls" (
-    "id" TEXT NOT NULL PRIMARY KEY,
-    "hash" TEXT NOT NULL,
-    "shortURL" TEXT NOT NULL,
-    "originURL" TEXT NOT NULL,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
