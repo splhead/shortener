@@ -1,7 +1,7 @@
 # shortner
 An URL shortner to Unyleya College grade for class Backend to mobile
 
-test online [aqui](https://nameless-bayou-07161.herokuapp.com/) documentação [aqui](https://nameless-bayou-07161.herokuapp.com/api-docs)
+test online [aqui](https://nameless-bayou-07161.herokuapp.com/)  -  documentação [aqui](https://nameless-bayou-07161.herokuapp.com/api-docs)
 
 ```
 $ git clone https://github.com/splhead/shortener.git
